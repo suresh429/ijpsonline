@@ -75,7 +75,6 @@ public class CategoryFragment extends Fragment {
         // get home data
         categoryViewModel.getCategoryRepository().observe(getViewLifecycleOwner(), homeResponse -> {
 
-
             if (homeResponse != null){
                 List<CategoryResponse.JournalDetailsBean> catDetailsBeanList = homeResponse.getJournal_details();
 

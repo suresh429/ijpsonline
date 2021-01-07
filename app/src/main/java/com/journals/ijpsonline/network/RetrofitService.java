@@ -9,8 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitService {
    private static Retrofit retrofit = null;
 
-
-    public static <S> S createService(Class<S> serviceClass,Context context) {
+   public static <S> S createService(Class<S> serviceClass,Context context) {
         if (retrofit == null) {
 
             OkHttpClient.Builder oktHttpClient = new OkHttpClient.Builder()

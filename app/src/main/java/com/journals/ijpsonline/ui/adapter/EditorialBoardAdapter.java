@@ -35,7 +35,12 @@ public class EditorialBoardAdapter extends RecyclerView.Adapter<EditorialBoardAd
     public void onBindViewHolder(@NonNull EditorialBoardAdapter.ViewHolder holder, int position) {
 
 
-        holder.rowItemBinding.txtName.setText(modelList.get(position).getEname());
+        if (modelList.get(position).getEname() != null && !modelList.get(position).getEname().equalsIgnoreCase("null") && !modelList.get(position).getEname().isEmpty()) {
+            holder.rowItemBinding.txtName.setText(modelList.get(position).getEname());
+        } else {
+            holder.rowItemBinding.txtName.setVisibility(View.GONE);
+        }
+
 
         if (modelList.get(position).getEditorDescription() != null && !modelList.get(position).getEditorDescription().equalsIgnoreCase("null") && !modelList.get(position).getEditorDescription().isEmpty()) {
             holder.rowItemBinding.txtView1.setText(modelList.get(position).getEditorDescription());
